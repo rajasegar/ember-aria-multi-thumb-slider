@@ -33,6 +33,7 @@ Example Markup:
   maxValue=500
   currentMin=50
   currentMax=200
+  units="$"
 }}
 ```
 

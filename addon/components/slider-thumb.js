@@ -34,13 +34,21 @@ export default Component.extend({
     'minValue:aria-valuemin',
     'role',
     'src',
-    'tabindex'
+    'tabindex',
+    'valueText:aria-valuetext'
   ],
   role: 'slider',
   tabindex: 0,
   min: false,
   max: computed.not('min'),
   focusClass: false,
+  valueText: computed('currentValue', function() {
+    let _valueText = `${this.get('currentValue')}${this.get('units')}`;
+    if(this.get('unitPrefix')){
+      _valueText = `${this.get('units')}${this.get('currentValue')}`;
+    }
+    return _valueText;
+  }),
 
   keyDown(event) {
     var flag = false;

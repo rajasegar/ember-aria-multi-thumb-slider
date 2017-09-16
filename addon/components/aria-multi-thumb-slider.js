@@ -14,5 +14,6 @@ export default Component.extend({
   }),
   maxLabel: computed('label', function() {
     return `Maximum ${this.get('label')}`;
-  })
+  }),
+  unitPrefix: true
 });

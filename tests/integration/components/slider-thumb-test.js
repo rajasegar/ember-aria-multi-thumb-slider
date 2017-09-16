@@ -56,7 +56,32 @@ test('it should have a aria-label', function(assert) {
 });
 
 test('it should have a aria-valuetext', function(assert) {
-  this.render(hbs`{{slider-thumb }}`);
-  assert.equal(this.$('[aria-valudetext="Hello World"]').length, 1);
+  this.render(hbs`
+{{aria-multi-thumb-slider
+  title="Select a hotel between $0 and $500"
+  label="Hotel Price"
+  minValue=0
+  maxValue=500
+  currentMin=50
+  currentMax=200
+  units="$"
+}}`);
+  assert.equal(this.$('[aria-valuetext="$200"]').length, 1);
+  assert.equal(this.$('[aria-valuetext="$50"]').length, 1);
 });
 
+test('it should have a aria-valuetext with unitPrefix set to false', function(assert) {
+  this.render(hbs`
+{{aria-multi-thumb-slider
+  title="Select a hotel between $0 and $500"
+  label="Hotel Price"
+  minValue=0
+  maxValue=500
+  currentMin=50
+  currentMax=200
+  units="$"
+  unitPrefix=false
+}}`);
+  assert.equal(this.$('[aria-valuetext="200$"]').length, 1);
+  assert.equal(this.$('[aria-valuetext="50$"]').length, 1);
+});

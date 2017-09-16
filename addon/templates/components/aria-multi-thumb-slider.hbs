@@ -1,5 +1,9 @@
 <div class="rail-label min">
-  {{currentMin}}
+  {{#if unitPrefix}}
+    {{units}}{{currentMin}}
+  {{else}}
+    {{currentMin}}{{units}}
+  {{/if}}
 </div>
 <div class="rail"
      style="width: 300px;"
@@ -12,6 +16,8 @@
     label=minLabel
     min=true
     onSlide=(action (mut currentMin))
+    units=units
+    unitPrefix=unitPrefix
   }}
   {{slider-thumb
     src="images/max-arrow.png"
@@ -20,9 +26,15 @@
     currentValue=currentMax
     label=maxLabel
     onSlide=(action (mut currentMax))
+    units=units
+    unitPrefix=unitPrefix
   }}
-  </div>
+</div>
 <div class="rail-label max">
-  {{currentMax}}
+  {{#if unitPrefix}}
+    {{units}}{{currentMax}}
+  {{else}}
+    {{currentMax}}{{units}}
+  {{/if}}
 </div>
 
