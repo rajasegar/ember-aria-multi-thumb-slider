@@ -1,13 +1,13 @@
 # ember-aria-multi-thumb-slider
 
-This README outlines the details of collaborating on this Ember addon.
+A two-thumb slider is a slider with two thumbs that each set a value in a group of related values, for example selecting a price range for a product or service. 
+
+This component is totally based on the WAI-ARIA Authoring Practices for accessible components.
+[Slider (Multi-thumb)](https://w3c.github.io/aria-practices/#slidertwothumb)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-aria-multi-thumb-slider`
-* `npm install`
-* `bower install`
+* `ember install ember-aria-multi-thumb-slider`
 
 ## Running
 
