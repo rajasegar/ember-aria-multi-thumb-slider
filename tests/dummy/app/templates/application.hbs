@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
+<h3>
+  Hotel Price Range
+</h3>
+{{aria-multi-thumb-slider
+  title="Select a hotel between $0 and $500"
+  label="Hotel Price"
+  minValue=0
+  maxValue=500
+  currentMin=50
+  currentMax=200
+}}
+<h3>
+  Flight Price Range
+</h3>
+{{aria-multi-thumb-slider
+  title="Select a flight between $0 and $1000"
+  label="Flight Price"
+  minValue=0
+  maxValue=1000
+  currentMin=50
+  currentMax=200
+}}
 {{outlet}}

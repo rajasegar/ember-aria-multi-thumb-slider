@@ -1,0 +1,1 @@
+export { default } from 'ember-aria-multi-thumb-slider/components/slider-thumb';

@@ -1,0 +1,28 @@
+<div class="rail-label min">
+  {{currentMin}}
+</div>
+<div class="rail"
+     style="width: 300px;"
+     title={{title}}>
+  {{slider-thumb
+    src="images/min-arrow.png"
+    minValue=minValue
+    maxValue=maxValue
+    currentValue=currentMin
+    label=minLabel
+    min=true
+    onSlide=(action (mut currentMin))
+  }}
+  {{slider-thumb
+    src="images/max-arrow.png"
+    minValue=minValue
+    maxValue=maxValue
+    currentValue=currentMax
+    label=maxLabel
+    onSlide=(action (mut currentMax))
+  }}
+  </div>
+<div class="rail-label max">
+  {{currentMax}}
+</div>
+
