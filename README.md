@@ -4,7 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/rajasegar/ember-aria-multi-thumb-slider/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ember-aria-multi-thumb-slider?branch=master)
 [![npm](https://img.shields.io/npm/dm/ember-aria-multi-thumb-slider.svg)](https://www.npmjs.com/package/ember-aria-multi-thumb-slider)
 [![npm version](http://img.shields.io/npm/v/ember-aria-multi-thumb-slider.svg?style=flat)](https://npmjs.org/package/ember-aria-multi-thumb-slider "View this project on npm")
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![dependencies Status](https://david-dm.org/rajasegar/ember-aria-multi-thumb-slider/status.svg)](https://david-dm.org/rajasegar/ember-aria-multi-thumb-slider)
+[![devDependencies Status](https://david-dm.org/rajasegar/ember-aria-multi-thumb-slider/dev-status.svg)](https://david-dm.org/rajasegar/ember-aria-multi-thumb-slider?type=dev)
 [![EmberObserver](http://emberobserver.com/badges/ember-aria-multi-thumb-slider.svg?branch=master)](http://emberobserver.com/addons/ember-aria-multi-thumb-slider)
 
 

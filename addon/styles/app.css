@@ -1,13 +1,13 @@
 /* CSS Document */
 
-div.aria-widget-slider {
+.aria-widget-slider {
     clear: both;
     padding-top: 0.5em;
     padding-bottom: 1em;
 }
 
 
-div.rail-label {
+.rail-label {
     padding-right: 0.5em;
     text-align: right;
     float: left;
@@ -16,12 +16,12 @@ div.rail-label {
     top: -0.5em;
 }
 
-div.rail-label.max {
+.rail-label.max {
     padding-left: 0.5em;
     text-align: left;
 }
 
-div.aria-widget-slider .rail {
+.aria-widget-slider .rail {
     background-color: #eee;
     border: 1px solid #888;
     position: relative;
@@ -29,22 +29,22 @@ div.aria-widget-slider .rail {
     float: left;
 }
 
-div.aria-widget-slider img[role="slider"]  {
+.aria-widget-slider img[role="slider"]  {
     position: absolute;
     padding: 0;
     margin: 0;
     top: -10px;
 }
 
-div.aria-widget-slider img[role="slider"].focus,
-div.aria-widget-slider img[role="slider"]:hover {
+.aria-widget-slider img[role="slider"].focus,
+.aria-widget-slider img[role="slider"]:hover {
     outline-color: rgb(140, 203, 242);
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px;
 }
 
-div.aria-widget-slider .rail.focus {
+.aria-widget-slider .rail.focus {
     background-color: #aaa;
 }
 

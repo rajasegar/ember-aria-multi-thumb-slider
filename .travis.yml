@@ -40,3 +40,4 @@ script:
 
 after_success:
   - npm run coveralls
+  
