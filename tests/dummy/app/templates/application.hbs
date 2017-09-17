@@ -1,24 +1,48 @@
-<h3>
-  Hotel Price Range
-</h3>
-{{aria-multi-thumb-slider
-  title="Select a hotel between $0 and $500"
-  label="Hotel Price"
-  minValue=0
-  maxValue=500
-  currentMin=50
-  currentMax=200
-  units="$"
-}}
-<h3>
-  Flight Price Range
-</h3>
-{{aria-multi-thumb-slider
-  title="Select a flight between $0 and $1000"
-  label="Flight Price"
-  minValue=0
-  maxValue=1000
-  currentMin=50
-  currentMax=200
-}}
-{{outlet}}
+<div class="container">
+	<!-- Top Navigation -->
+	<div class="codrops-top clearfix">
+		<a class="codrops-icon codrops-icon-prev" href="https://github.com/rajasegar/ember-aria-multi-thumb-slider"><span>Github</span></a>
+		<span class="right"><a class="codrops-icon codrops-icon-drop" href="#"><span>Documentation</span></a></span>
+	</div>
+	<header>
+		<h1>ember-aria-multi-thumb-slider <span>An accessibile range slider component in Ember</span></h1>
+		<p class="note">This component is totally based on the <a href="https://w3c.github.io/aria-practices/#slidertwothumb">WAI-ARIA Authoring Practices</a> for accessible components</p>
+	</header>
+	<div class="wrapper">
+    <h3>
+      Hotel Price Range
+    </h3>
+    {{aria-multi-thumb-slider
+      title="Select a hotel between $0 and $500"
+      label="Hotel Price"
+      minValue=0
+      maxValue=500
+      currentMin=50
+      currentMax=200
+      units="$"
+    }}
+    <h3>
+      Flight Price Range
+    </h3>
+    {{aria-multi-thumb-slider
+      title="Select a flight between $0 and $1000"
+      label="Flight Price"
+      minValue=0
+      maxValue=1000
+      currentMin=50
+      currentMax=500
+    }}
+    <h3>Custom Slider Thumbs</h3>
+    {{aria-multi-thumb-slider
+      title="Select a flight between $0 and $1000"
+      label="Flight Price"
+      minValue=0
+      maxValue=100
+      currentMin=5
+      currentMax=50
+      minThumb="images/min-color-arrow.png"
+      maxThumb="images/max-color-arrow.png"
+    }}
+    {{outlet}}
+  </div>
+</div>

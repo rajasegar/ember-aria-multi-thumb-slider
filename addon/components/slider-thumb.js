@@ -151,25 +151,31 @@ export default Component.extend({
   moveSliderTo(value) {
     let minValue = this.get('minValue');
     let maxValue = this.get('maxValue');
+    let railMin = this.get('railMin');
+    let railMax = this.get('railMax');
     let _value = value;
 
     if (value < minValue) {
       _value = minValue;
     }
 
-    if (value > maxValue) {
+    if ( value > maxValue) {
       _value = maxValue;
     }
 
     this.set('currentValue', _value);
 
-    let pos = Math.round(((_value - minValue) * (RAIL_WIDTH - 2 * (THUMB_WIDTH - RAIL_BORDER_WIDTH))) / (maxValue - minValue));
+    if(value < minValue || value > maxValue) {
+      return;
+    }
+
+    let pos = Math.round(((_value - railMin) * (RAIL_WIDTH - 2 * (THUMB_WIDTH - RAIL_BORDER_WIDTH))) / (railMax - railMin));
     let left = '';
 
     if (this.get('min')) {
-      left = (pos + THUMB_WIDTH - RAIL_BORDER_WIDTH) + 'px';
+      left = (pos + RAIL_BORDER_WIDTH) + 'px';
     } else {
-      left = (pos - RAIL_BORDER_WIDTH) + 'px';
+      left = (pos + THUMB_WIDTH - RAIL_BORDER_WIDTH) + 'px';
     }
 
     this.$().css('left', left);

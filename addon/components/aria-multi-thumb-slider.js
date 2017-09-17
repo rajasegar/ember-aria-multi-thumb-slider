@@ -15,5 +15,7 @@ export default Component.extend({
   maxLabel: computed('label', function() {
     return `Maximum ${this.get('label')}`;
   }),
-  unitPrefix: true
+  unitPrefix: true,
+  minThumb: 'images/min-arrow.png',
+  maxThumb: 'images/max-arrow.png'
 });

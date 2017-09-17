@@ -37,6 +37,56 @@ Example Markup:
 }}
 ```
 
+For custom thumb sliders:
+
+```hbs
+    {{aria-multi-thumb-slider
+      title="Select a flight between $0 and $1000"
+      label="Flight Price"
+      minValue=0
+      maxValue=100
+      currentMin=5
+      currentMax=50
+      minThumb="images/min-color-arrow.png"
+      maxThumb="images/max-color-arrow.png"
+    }}
+```
+
+
+## Properties
+
+### title [STRING]
+Tool-tip text for the slider
+
+### label [STRING]
+ARIA label text for the thumbs.
+
+### minValue [NUMBER]
+Minimum value for the range
+
+### maxValue [NUMBER]
+Maximum value for the range
+
+### currentMin [NUMBER]
+Current minimum value for the range
+
+### currentMax [NUMBER]
+Current maximum value for the range
+
+### units [STRING]
+The dimension for the value of slider
+
+### minThumb [STRING]
+The image url for the minimum value thumb of the slider
+
+### maxThumb [STRING]
+The image url for the maximum value thumb of the slider
+
+### unitPrefix [BOOLEAN]
+The flag which tells whether we need to prefix or suffix the units to the value 
+
+Default: *true*
+
 
 ## Running
 

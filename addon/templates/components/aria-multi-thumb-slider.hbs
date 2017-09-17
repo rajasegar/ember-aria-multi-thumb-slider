@@ -9,9 +9,11 @@
      style="width: 300px;"
      title={{title}}>
   {{slider-thumb
-    src="images/min-arrow.png"
+    src=minThumb
     minValue=minValue
-    maxValue=maxValue
+    maxValue=currentMax
+    railMin=minValue
+    railMax=maxValue
     currentValue=currentMin
     label=minLabel
     min=true
@@ -20,9 +22,11 @@
     unitPrefix=unitPrefix
   }}
   {{slider-thumb
-    src="images/max-arrow.png"
-    minValue=minValue
+    src=maxThumb
+    minValue=currentMin
     maxValue=maxValue
+    railMin=minValue
+    railMax=maxValue
     currentValue=currentMax
     label=maxLabel
     onSlide=(action (mut currentMax))
