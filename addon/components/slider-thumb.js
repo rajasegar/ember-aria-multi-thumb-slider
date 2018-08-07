@@ -1,10 +1,7 @@
-import Ember from 'ember';
+import { not } from '@ember/object/computed';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/slider-thumb';
-
-const {
-  Component,
-  computed,
-} = Ember;
 
 const RAIL_BORDER_WIDTH = 1;
 const RAIL_WIDTH = 300;
@@ -40,7 +37,7 @@ export default Component.extend({
   role: 'slider',
   tabindex: 0,
   min: false,
-  max: computed.not('min'),
+  max: not('min'),
   focusClass: false,
   valueText: computed('currentValue', function() {
     let _valueText = `${this.get('currentValue')}${this.get('units')}`;
@@ -165,9 +162,9 @@ export default Component.extend({
 
     this.set('currentValue', _value);
 
-    if(value < minValue || value > maxValue) {
-      return;
-    }
+    // if(value < minValue || value > maxValue) {
+    //   return;
+    // }
 
     let pos = Math.round(((_value - railMin) * (RAIL_WIDTH - 2 * (THUMB_WIDTH - RAIL_BORDER_WIDTH))) / (railMax - railMin));
     let left = '';
