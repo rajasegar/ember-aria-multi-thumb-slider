@@ -23,7 +23,19 @@ This component is totally based on the WAI-ARIA Authoring Practices for accessib
 
 * `ember install ember-aria-multi-thumb-slider`
 
+
+## Pre-usage setup
+
+Setup slider icons:
+
+Add your icons for the left and right sliders to the following directory and name them as `max-arrow.png` and `min-arrow.png`.
+
+```shell
+cd <ember-app-root-dir>/public/images
+```
+
 ## Usage
+
 Example Markup:
 
 ```hbs
