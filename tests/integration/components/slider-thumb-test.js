@@ -1,87 +1,89 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('slider-thumb', 'Integration | Component | slider thumb', {
-  integration: true
-});
+module('Integration | Component | slider thumb', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders an img element', function(assert) {
-  this.render(hbs`{{slider-thumb}}`);
-  assert.equal(this.$('img').length, 1);
-});
+  test('it renders an img element', async function(assert) {
+    await render(hbs`{{slider-thumb}}`);
+    assert.equal(findAll('img').length, 1);
+  });
 
-test('it should have a thumb classname', function(assert) {
-  this.render(hbs`{{slider-thumb}}`);
-  assert.equal(this.$('.thumb').length, 1);
-});
+  test('it should have a thumb classname', async function(assert) {
+    await render(hbs`{{slider-thumb}}`);
+    assert.equal(findAll('.thumb').length, 1);
+  });
 
-test('it should have a min classname', function(assert) {
-  this.render(hbs`{{slider-thumb min=true}}`);
-  assert.equal(this.$('.min').length, 1);
-});
+  test('it should have a min classname', async function(assert) {
+    await render(hbs`{{slider-thumb min=true}}`);
+    assert.equal(findAll('.min').length, 1);
+  });
 
-test('it should have a max classname', function(assert) {
-  this.render(hbs`{{slider-thumb }}`);
-  assert.equal(this.$('.max').length, 1);
-});
+  test('it should have a max classname', async function(assert) {
+    await render(hbs`{{slider-thumb }}`);
+    assert.equal(findAll('.max').length, 1);
+  });
 
-test('it should have a role=slider', function(assert) {
-  this.render(hbs`{{slider-thumb }}`);
-  assert.equal(this.$('[role="slider"]').length, 1);
-});
+  test('it should have a role=slider', async function(assert) {
+    await render(hbs`{{slider-thumb }}`);
+    assert.equal(findAll('[role="slider"]').length, 1);
+  });
 
-test('it should have a tabindex=0', function(assert) {
-  this.render(hbs`{{slider-thumb }}`);
-  assert.equal(this.$('[tabindex="0"]').length, 1);
-});
+  test('it should have a tabindex=0', async function(assert) {
+    await render(hbs`{{slider-thumb }}`);
+    assert.equal(findAll('[tabindex="0"]').length, 1);
+  });
 
-test('it should have a aria-valuemin', function(assert) {
-  this.render(hbs`{{slider-thumb minValue=100}}`);
-  assert.equal(this.$('[aria-valuemin="100"]').length, 1);
-});
+  test('it should have a aria-valuemin', async function(assert) {
+    await render(hbs`{{slider-thumb minValue=100}}`);
+    assert.equal(findAll('[aria-valuemin="100"]').length, 1);
+  });
 
-test('it should have a aria-valuemax', function(assert) {
-  this.render(hbs`{{slider-thumb maxValue=100}}`);
-  assert.equal(this.$('[aria-valuemax="100"]').length, 1);
-});
+  test('it should have a aria-valuemax', async function(assert) {
+    await render(hbs`{{slider-thumb maxValue=100}}`);
+    assert.equal(findAll('[aria-valuemax="100"]').length, 1);
+  });
 
-test('it should have a aria-valuenow', function(assert) {
-  this.render(hbs`{{slider-thumb currentValue=100}}`);
-  assert.equal(this.$('[aria-valuenow="100"]').length, 1);
-});
+  test('it should have a aria-valuenow', async function(assert) {
+    await render(hbs`{{slider-thumb currentValue=100}}`);
+    assert.equal(findAll('[aria-valuenow="100"]').length, 1);
+  });
 
-test('it should have a aria-label', function(assert) {
-  this.render(hbs`{{slider-thumb label="Hello World"}}`);
-  assert.equal(this.$('[aria-label="Hello World"]').length, 1);
-});
+  test('it should have a aria-label', async function(assert) {
+    await render(hbs`{{slider-thumb label="Hello World"}}`);
+    assert.equal(findAll('[aria-label="Hello World"]').length, 1);
+  });
 
-test('it should have a aria-valuetext', function(assert) {
-  this.render(hbs`
-{{aria-multi-thumb-slider
-  title="Select a hotel between $0 and $500"
-  label="Hotel Price"
-  minValue=0
-  maxValue=500
-  currentMin=50
-  currentMax=200
-  units="$"
-}}`);
-  assert.equal(this.$('[aria-valuetext="$200"]').length, 1);
-  assert.equal(this.$('[aria-valuetext="$50"]').length, 1);
-});
+  test('it should have a aria-valuetext', async function(assert) {
+    await render(hbs`
+  {{aria-multi-thumb-slider
+    title="Select a hotel between $0 and $500"
+    label="Hotel Price"
+    minValue=0
+    maxValue=500
+    currentMin=50
+    currentMax=200
+    units="$"
+  }}`);
+    assert.equal(findAll('[aria-valuetext="$200"]').length, 1);
+    assert.equal(findAll('[aria-valuetext="$50"]').length, 1);
+  });
 
-test('it should have a aria-valuetext with unitPrefix set to false', function(assert) {
-  this.render(hbs`
-{{aria-multi-thumb-slider
-  title="Select a hotel between $0 and $500"
-  label="Hotel Price"
-  minValue=0
-  maxValue=500
-  currentMin=50
-  currentMax=200
-  units="$"
-  unitPrefix=false
-}}`);
-  assert.equal(this.$('[aria-valuetext="200$"]').length, 1);
-  assert.equal(this.$('[aria-valuetext="50$"]').length, 1);
+  test('it should have a aria-valuetext with unitPrefix set to false', async function(assert) {
+    await render(hbs`
+  {{aria-multi-thumb-slider
+    title="Select a hotel between $0 and $500"
+    label="Hotel Price"
+    minValue=0
+    maxValue=500
+    currentMin=50
+    currentMax=200
+    units="$"
+    unitPrefix=false
+  }}`);
+    assert.equal(findAll('[aria-valuetext="200$"]').length, 1);
+    assert.equal(findAll('[aria-valuetext="50$"]').length, 1);
+  });
 });

@@ -162,10 +162,6 @@ export default Component.extend({
 
     this.set('currentValue', _value);
 
-    // if(value < minValue || value > maxValue) {
-    //   return;
-    // }
-
     let pos = Math.round(((_value - railMin) * (RAIL_WIDTH - 2 * (THUMB_WIDTH - RAIL_BORDER_WIDTH))) / (railMax - railMin));
     let left = '';
 
@@ -175,7 +171,8 @@ export default Component.extend({
       left = (pos + THUMB_WIDTH - RAIL_BORDER_WIDTH) + 'px';
     }
 
-    this.$().css('left', left);
+    //this.$().css('left', left);
+    this.element.style.left = left;
 
   }
 });
