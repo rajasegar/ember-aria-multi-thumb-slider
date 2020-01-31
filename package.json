@@ -18,6 +18,8 @@
   "repository": "https://github.com/rajasegar/ember-aria-multi-thumb-slider",
   "scripts": {
     "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
     "start": "ember server",
     "test": "ember test",
     "test:firefox": "ember test --launch='Firefox'",
