@@ -1,6 +1,6 @@
 {
   "name": "ember-aria-multi-thumb-slider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An ember addon for a two thumb slider to pick a value range.",
   "keywords": [
     "ember-addon",
